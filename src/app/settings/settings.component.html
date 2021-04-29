@@ -1,1 +1,32 @@
-<p>settings works!</p>
+<div class="settings">
+  <label>Color 1</label>
+  <div class="colors">
+    <span
+      class="badge"
+      *ngFor="let color of colors"
+      [ngClass]="color"
+      (click)="changeColorOne(color)"
+    ></span>
+  </div>
+  <input type="range" min="0" max="100" [(ngModel)]="percentColor1" />
+
+  <label>Color 2</label>
+  <div class="colors">
+    <span
+      class="badge"
+      *ngFor="let color of colors.reverse()"
+      [ngClass]="color"
+      (click)="changeColorTwo(color)"
+    ></span>
+  </div>
+  <input type="range" min="0" max="100" [(ngModel)]="percentColor2" />
+
+  <label>Width</label>
+  <input type="range" min="0" max="1000" step="50" [(ngModel)]="width" />
+
+  <label>Height</label>
+  <input type="range" min="0" max="1000" step="50" [(ngModel)]="height" />
+
+  <label>Font Size</label>
+  <input type="range" min="12" max="72" [(ngModel)]="fontSize" />
+</div>

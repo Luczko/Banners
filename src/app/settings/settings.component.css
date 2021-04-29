@@ -1,0 +1,19 @@
+.badge {
+  cursor: pointer;
+  display: inline-block;
+  float: none;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  padding: 30px 0 20px 0;
+}
+
+.colors {
+  display: flex;
+  justify-content: center;
+}
