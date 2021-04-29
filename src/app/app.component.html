@@ -12,11 +12,11 @@
     [colors]="colors"
     (clickOne)="color1 = $event"
     (clickTwo)="color2 = $event"
-    [percentColor1]="percentColor1"
-    [percentColor2]="percentColor2"
-    [width]="width"
-    [height]="height"
-    [fontSize]="fontSize"
+    (changePerColor1)="percentColor1 = $event"
+    (changePerColor2)="percentColor2 = $event"
+    (changeWidth)="width = $event"
+    (changeHeight)="height = $event"
+    (changeFontSize)="fontSize = $event"
   ></app-settings>
   <!-- Component Settings End -->
 </div>

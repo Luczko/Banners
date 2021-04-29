@@ -8,7 +8,13 @@
       (click)="changeColorOne(color)"
     ></span>
   </div>
-  <input type="range" min="0" max="100" [(ngModel)]="percentColor1" />
+  <input
+    type="range"
+    min="0"
+    max="100"
+    [(ngModel)]="percentColor1"
+    (change)="changePerColor1.emit(percentColor1)"
+  />
 
   <label>Color 2</label>
   <div class="colors">
@@ -19,14 +25,40 @@
       (click)="changeColorTwo(color)"
     ></span>
   </div>
-  <input type="range" min="0" max="100" [(ngModel)]="percentColor2" />
+  <input
+    type="range"
+    min="0"
+    max="100"
+    [(ngModel)]="percentColor2"
+    (change)="changePerColor2.emit(percentColor2)"
+  />
 
   <label>Width</label>
-  <input type="range" min="0" max="1000" step="50" [(ngModel)]="width" />
+  <input
+    type="range"
+    min="0"
+    max="1000"
+    step="50"
+    [(ngModel)]="width"
+    (change)="changeWidth.emit(width)"
+  />
 
   <label>Height</label>
-  <input type="range" min="0" max="1000" step="50" [(ngModel)]="height" />
+  <input
+    type="range"
+    min="0"
+    max="1000"
+    step="50"
+    [(ngModel)]="height"
+    (change)="changeHeight.emit(height)"
+  />
 
   <label>Font Size</label>
-  <input type="range" min="12" max="72" [(ngModel)]="fontSize" />
+  <input
+    type="range"
+    min="12"
+    max="72"
+    [(ngModel)]="fontSize"
+    (change)="changeFontSize.emit(fontSize)"
+  />
 </div>

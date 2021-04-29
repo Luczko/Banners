@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { saveAs } from 'file-saver';
 import domtoimage from 'dom-to-image';
+import { SettingsComponent } from './settings/settings.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,7 @@ export class AppComponent {
     verticalRev: false,
   };
 
-  colors = [
+  colors: string[] = [
     'red',
     'purple',
     'blue',
@@ -34,7 +35,7 @@ export class AppComponent {
     'black',
   ];
 
-  getBannerStyles() {
+  getBannerStyles(): object {
     return {
       width: `${this.width}px`,
       height: `${this.height}px`,
@@ -42,12 +43,12 @@ export class AppComponent {
     };
   }
 
-  setLayout(selectedLayout: any) {
+  setLayout(selectedLayout: any): void {
     Object.keys(this.layout).forEach((key) => (this.layout[key] = false));
     this.layout[selectedLayout] = true;
   }
 
-  saveImage(element: HTMLDivElement) {
+  saveImage(element: HTMLDivElement): void {
     domtoimage.toBlob(element).then((e) => saveAs(e));
   }
 }

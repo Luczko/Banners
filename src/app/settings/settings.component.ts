@@ -6,14 +6,22 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./settings.component.css'],
 })
 export class SettingsComponent {
-  @Output() clickOne = new EventEmitter<any>();
-  @Output() clickTwo = new EventEmitter<any>();
-  @Input() colors: any;
-  @Input() percentColor1: any;
-  @Input() percentColor2: any;
-  @Input() width: any;
-  @Input() height: any;
-  @Input() fontSize: any;
+  @Output() clickOne = new EventEmitter<string>();
+  @Output() clickTwo = new EventEmitter<string>();
+  @Input() colors!: string[];
+  @Output() changePerColor1 = new EventEmitter<number>();
+  @Output() changePerColor2 = new EventEmitter<number>();
+  @Output() changeWidth = new EventEmitter<number>();
+  @Output() changeHeight = new EventEmitter<number>();
+  @Output() changeFontSize = new EventEmitter<number>();
+
+  width = 600;
+  height = 500;
+  color1 = 'red';
+  color2 = 'yellow';
+  percentColor1 = 0;
+  percentColor2 = 100;
+  fontSize = 52;
 
   changeColorOne(color: string): void {
     this.clickOne.emit(color);
