@@ -1,29 +1,14 @@
 <!-- Component Navbar -->
-<nav>
-  <div class="nav-wrapper black">
-    <a class="brand-logo">The Banners</a>
-    <a href="#" class="brand-logo center" (click)="saveImage(banner)">
-      Download
-    </a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a (click)="setLayout('horizontal')">Horizontal</a></li>
-      <li><a (click)="setLayout('horizontalRev')">Horizontal Reverse</a></li>
-      <li><a (click)="setLayout('vertical')">Vertical</a></li>
-      <li><a (click)="setLayout('verticalRev')">Vertical Reverse</a></li>
-    </ul>
-  </div>
-</nav>
+<app-navbar (layout)="setLayout($event)"></app-navbar>
 <!-- Component Navbar End -->
 
 <div [ngClass]="layout">
   <!-- Component Banner -->
-  <div class="banner">
-    <div #banner class="banner-text" [ngStyle]="getBannerStyles()">
-      <span contenteditable="true" [style.fontSize.px]="fontSize">
-        Try it!
-      </span>
-    </div>
-  </div>
+  <app-banner
+    #child1
+    [newStyle]="getBannerStyles()"
+    [newFont]="fontSize"
+  ></app-banner>
   <!-- Component Banner End -->
 
   <!-- Component Settings -->

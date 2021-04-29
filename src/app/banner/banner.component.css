@@ -1,0 +1,14 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.banner-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
